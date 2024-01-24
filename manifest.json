@@ -1,0 +1,45 @@
+{
+    "name": "BiliBili Downloader",
+    "version": "1.0",
+    "description": "BiliBili Downloader",
+    "icons": {
+        "16": "blogo.png"
+    },
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": "blogo.png",
+        "default_popup": "index.html"
+    },
+    "background": {
+        "scripts": [
+            "static/js/background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "static/js/content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "permissions": [
+        "cookies",
+        "tabs",
+        "declarativeContent",
+        "storage",
+        "notifications",
+        "contextMenus"
+    ],
+    "web_accessible_resources": [
+        "insert.js",
+        "static/js/background.js"
+    ],
+    "externally_connectable": {
+        "matches": ["*://localhost/*"]
+    }
+}
