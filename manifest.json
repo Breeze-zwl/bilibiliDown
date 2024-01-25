@@ -8,13 +8,13 @@
     "manifest_version": 2,
     "browser_action": {
         "default_icon": "blogo.png",
-        "default_popup": "index.html"
+        "default_popup": "index.html",
+        "default_title": "逝者如斯夫，不舍昼夜"
     },
     "background": {
         "scripts": [
             "static/js/background.js"
-        ],
-        "persistent": false
+        ]
     },
     "content_scripts": [
         {
@@ -41,5 +41,7 @@
     ],
     "externally_connectable": {
         "matches": ["*://localhost/*"]
-    }
+    },
+    "homepage_url": "https://github.com/Breeze-zwl/bilibiliDown",
+    "devtools_page": "devtools.html"
 }
